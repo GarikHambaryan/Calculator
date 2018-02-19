@@ -32,7 +32,16 @@ namespace Calculator
                 txtResult.Clear();
             operationPressed = false;
             Button b = (Button)sender;
-            txtResult.Text = txtResult.Text + b.Text;
+            if(b.Text == ".")
+            {
+                if(!txtResult.Text.Contains("."))
+                    txtResult.Text = txtResult.Text + b.Text;
+            }
+            else
+            {
+                txtResult.Text = txtResult.Text + b.Text;
+            }
+           
         }
                
         private void btn_Ce(object sender, EventArgs e)
@@ -43,10 +52,22 @@ namespace Calculator
         private void operator_click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
-            operation = b.Text;
-            value = double.Parse(txtResult.Text);
-            operationPressed = true;
-            equation.Text = value + "" + operation;
+
+            if(value != 0)
+            {
+                btn_equal.PerformClick();
+                operationPressed = true;
+                operation = b.Text;
+                equation.Text = value + "" + operation;
+            }
+            else
+            {
+                operation = b.Text;
+                value = double.Parse(txtResult.Text);
+                operationPressed = true;
+                equation.Text = value + "" + operation;
+            }
+            
         }
 
         private void equals_click(object sender, EventArgs e)
@@ -69,7 +90,9 @@ namespace Calculator
                 default:
                     break;
             }
-            operationPressed = false;
+
+            value = Int32.Parse(txtResult.Text);
+            operation = "";
         }
 
        
@@ -78,6 +101,69 @@ namespace Calculator
         {
             txtResult.Text = "0";
             value = 0;
+            equation.Text = "";
+        }
+
+        private void FormCalc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show(e.KeyChar.ToString());
+            switch(e.KeyChar.ToString())
+            {
+                case "0":
+                    btn_0.PerformClick();
+                    break;
+                case "1":
+                    btn_1.PerformClick();
+                    break;
+                case "2":
+                    btn_2.PerformClick();
+                    break;
+                case "3":
+                    btn_3.PerformClick();
+                    break;
+                case "4":
+                    btn_4.PerformClick();
+                    break;
+                case "5":
+                    btn_5.PerformClick();
+                    break;
+                case "6":
+                    btn_6.PerformClick();
+                    break;
+                case "7":
+                    btn_7.PerformClick();
+                    break;
+                case "8":
+                    btn_8.PerformClick();
+                    break;
+                case "9":
+                    btn_9.PerformClick();
+                    break;
+                case "+":
+                    btn_add.PerformClick();
+                    break;
+                case "-":
+                    btn_sub.PerformClick();
+                    break;
+                case "*":
+                    btn_mul.PerformClick();
+                    break;
+                case "/":
+                    btn_div.PerformClick();
+                    break;
+                case "=":
+                    btn_equal.PerformClick();
+                    break;
+                case "ENTER":
+                    btn_1.PerformClick();
+                    break;
+
+
+
+                default:
+                    break;              
+                  
+            }
         }
     }
 }

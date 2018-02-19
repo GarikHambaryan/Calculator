@@ -265,14 +265,14 @@
             this.equation.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.equation.Location = new System.Drawing.Point(22, 18);
             this.equation.Name = "equation";
-            this.equation.Size = new System.Drawing.Size(59, 31);
+            this.equation.Size = new System.Drawing.Size(0, 31);
             this.equation.TabIndex = 19;
-            this.equation.Text = "123";
             // 
             // FormCalc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(272, 285);
             this.Controls.Add(this.equation);
             this.Controls.Add(this.txtResult);
@@ -295,6 +295,7 @@
             this.Controls.Add(this.btn_8);
             this.Controls.Add(this.btn_7);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(280, 316);
             this.MinimumSize = new System.Drawing.Size(280, 316);
@@ -303,6 +304,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
             this.Load += new System.EventHandler(this.FormCalc_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FormCalc_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 
