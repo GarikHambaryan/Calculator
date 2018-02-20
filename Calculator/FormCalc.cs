@@ -53,12 +53,19 @@ namespace Calculator
         {
             Button b = (Button)sender;
 
-            if(value != 0)
+            if (value != 0)
             {
+                if (b.Text == "Sqrt")
+                    txtResult.Text = Operators.Sqrt(double.Parse(txtResult.Text)).ToString();
                 btn_equal.PerformClick();
                 operationPressed = true;
                 operation = b.Text;
                 equation.Text = value + "" + operation;
+            }
+            else if (b.Text == "Sqrt")
+            {
+                txtResult.Text = Operators.Sqrt(double.Parse(txtResult.Text)).ToString();
+                value = Math.Sqrt(double.Parse(txtResult.Text));
             }
             else
             {
@@ -66,6 +73,7 @@ namespace Calculator
                 value = double.Parse(txtResult.Text);
                 operationPressed = true;
                 equation.Text = value + "" + operation;
+
             }
             
         }
@@ -75,17 +83,17 @@ namespace Calculator
             equation.Text = "";
             switch (operation)
             {
-                case "+":
-                    txtResult.Text = (value + double.Parse(txtResult.Text)).ToString();
+                case "+":                   
+                    txtResult.Text = Operators.Add(value, double.Parse(txtResult.Text)).ToString();
                     break;
                 case "-":
-                    txtResult.Text = (value - double.Parse(txtResult.Text)).ToString();
+                    txtResult.Text = Operators.Sub(value, double.Parse(txtResult.Text)).ToString();
                     break;
                 case "*":
-                    txtResult.Text = (value * double.Parse(txtResult.Text)).ToString();
+                    txtResult.Text = Operators.Mult(value, double.Parse(txtResult.Text)).ToString();
                     break;
                 case "/":
-                    txtResult.Text = (value / double.Parse(txtResult.Text)).ToString();
+                    txtResult.Text = Operators.Div(value, double.Parse(txtResult.Text)).ToString();
                     break;
                 default:
                     break;

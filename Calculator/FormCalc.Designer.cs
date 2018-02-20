@@ -48,6 +48,7 @@
             this.txtResult = new System.Windows.Forms.TextBox();
             this.btn_2 = new System.Windows.Forms.Button();
             this.equation = new System.Windows.Forms.Label();
+            this.btn_Sqrt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_7
@@ -152,9 +153,9 @@
             // btn_add
             // 
             this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_add.Location = new System.Drawing.Point(165, 231);
+            this.btn_add.Location = new System.Drawing.Point(165, 242);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(45, 45);
+            this.btn_add.Size = new System.Drawing.Size(45, 34);
             this.btn_add.TabIndex = 10;
             this.btn_add.Text = "+";
             this.btn_add.UseVisualStyleBackColor = true;
@@ -174,9 +175,9 @@
             // btn_sub
             // 
             this.btn_sub.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_sub.Location = new System.Drawing.Point(165, 180);
+            this.btn_sub.Location = new System.Drawing.Point(165, 202);
             this.btn_sub.Name = "btn_sub";
-            this.btn_sub.Size = new System.Drawing.Size(45, 45);
+            this.btn_sub.Size = new System.Drawing.Size(45, 34);
             this.btn_sub.TabIndex = 12;
             this.btn_sub.Text = "-";
             this.btn_sub.UseVisualStyleBackColor = true;
@@ -185,9 +186,9 @@
             // btn_mul
             // 
             this.btn_mul.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_mul.Location = new System.Drawing.Point(165, 129);
+            this.btn_mul.Location = new System.Drawing.Point(165, 162);
             this.btn_mul.Name = "btn_mul";
-            this.btn_mul.Size = new System.Drawing.Size(45, 45);
+            this.btn_mul.Size = new System.Drawing.Size(45, 34);
             this.btn_mul.TabIndex = 13;
             this.btn_mul.Text = "*";
             this.btn_mul.UseVisualStyleBackColor = true;
@@ -196,9 +197,9 @@
             // btn_div
             // 
             this.btn_div.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_div.Location = new System.Drawing.Point(165, 78);
+            this.btn_div.Location = new System.Drawing.Point(165, 122);
             this.btn_div.Name = "btn_div";
-            this.btn_div.Size = new System.Drawing.Size(45, 45);
+            this.btn_div.Size = new System.Drawing.Size(45, 34);
             this.btn_div.TabIndex = 14;
             this.btn_div.Text = "/";
             this.btn_div.UseVisualStyleBackColor = true;
@@ -268,12 +269,23 @@
             this.equation.Size = new System.Drawing.Size(0, 31);
             this.equation.TabIndex = 19;
             // 
+            // btn_Sqrt
+            // 
+            this.btn_Sqrt.Location = new System.Drawing.Point(165, 78);
+            this.btn_Sqrt.Name = "btn_Sqrt";
+            this.btn_Sqrt.Size = new System.Drawing.Size(45, 34);
+            this.btn_Sqrt.TabIndex = 20;
+            this.btn_Sqrt.Text = "Sqrt";
+            this.btn_Sqrt.UseVisualStyleBackColor = true;
+            this.btn_Sqrt.Click += new System.EventHandler(this.operator_click);
+            // 
             // FormCalc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(272, 285);
+            this.Controls.Add(this.btn_Sqrt);
             this.Controls.Add(this.equation);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.btn_C);
@@ -332,6 +344,7 @@
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Button btn_2;
         private System.Windows.Forms.Label equation;
+        private System.Windows.Forms.Button btn_Sqrt;
     }
 }
 

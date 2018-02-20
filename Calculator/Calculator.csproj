@@ -51,6 +51,7 @@
     <Compile Include="FormCalc.Designer.cs">
       <DependentUpon>FormCalc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Operators.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCalc.resx">
